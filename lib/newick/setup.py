@@ -9,7 +9,7 @@ import sys
 
 setup(
     name='newick',
-    version="0.0.0",
+    version="0.0.1",
 
     description='read and write trees with python',
     long_description="http://www.daimi.au.dk/~mailund/newick.html",
@@ -23,5 +23,5 @@ setup(
         'Topic :: Software Development :: Build Tools',
     ],
     keywords='bioinformatics',
-    packages=find_packages(),
+    packages=["newick"]
 )

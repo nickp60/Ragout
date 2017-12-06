@@ -8,6 +8,9 @@ python setup.py install
 from glob import glob
 import os
 import sys
+if os.path.exists('MANIFEST'):
+    os.remove('MANIFEST')
+
 from setuptools import setup, find_packages
 
 if sys.argv[-1] == 'setup.py':
@@ -21,10 +24,36 @@ if sys.version_info[:2] < (2, 7):
 
 # Write the version information.
 sys.path.insert(0, 'networkx')
-import release
+import networkx.release as release
 version = release.write_versionfile()
 sys.path.pop(0)
 
+packages = [
+            "networkx.algorithms",
+            "networkx.algorithms.assortativity",
+            "networkx.algorithms.bipartite",
+            "networkx.algorithms.centrality",
+            "networkx.algorithms.community",
+            "networkx.algorithms.components",
+            "networkx.algorithms.connectivity",
+            "networkx.algorithms.coloring",
+            "networkx.algorithms.flow",
+            "networkx.algorithms.traversal",
+            "networkx.algorithms.isomorphism",
+            "networkx.algorithms.shortest_paths",
+            "networkx.algorithms.link_analysis",
+            "networkx.algorithms.operators",
+            "networkx.algorithms.approximation",
+            "networkx.algorithms.tree",
+            "networkx.classes",
+            "networkx.generators",
+            "networkx.drawing",
+            "networkx.linalg",
+            "networkx.readwrite",
+            "networkx.readwrite.json_graph",
+            "networkx.tests",
+            "networkx.testing",
+            "networkx.utils"]
 
 docdirbase = 'share/doc/networkx-%s' % version
 # add basic documentation
